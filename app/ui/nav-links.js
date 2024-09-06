@@ -7,6 +7,7 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import Cookies from "js-cookie";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -22,12 +23,11 @@ const links = [
 ];
 
 export default function NavLinks() {
+  const role = Cookies.get("role");
   const pathname = usePathname();
-  const isAdmin = true;
 
-  const filteredLinks = isAdmin
-    ? links
-    : links.filter((link) => link.name !== "User");
+  const filteredLinks =
+    role == "admin" ? links : links.filter((link) => link.name !== "User");
 
   return (
     <>

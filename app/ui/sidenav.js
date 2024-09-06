@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 export default function SideNav() {
   const handleLogout = () => {
     Cookies.remove("token");
+    Cookies.remove("role");
   };
 
   return (

@@ -31,9 +31,10 @@ export default function LoginForm() {
         if (payload.status) {
           toast.success(payload.message);
           Cookies.set("token", payload.token);
+          Cookies.set("role", payload.role);
           setTimeout(() => {
             router.push("/divisi");
-          }, 2000);
+          }, 500);
         } else {
           toast.error(payload.message);
         }
