@@ -2,6 +2,7 @@ import { CreateDivisi } from "@/app/ui/divisi/buttons";
 import TableDivisi from "@/app/ui/divisi/table";
 import { lato } from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
+import TableUser from "@/app/ui/user/table";
 
 export default async function Page({ searchParams }) {
   const query = searchParams?.query || "";
@@ -11,6 +12,8 @@ export default async function Page({ searchParams }) {
       <div className="flex w-full items-center justify-between">
         <h1 className={`${lato.className} text-xl`}>Users</h1>
       </div>
+
+      <TableUser search={query} />
     </main>
   );
 }

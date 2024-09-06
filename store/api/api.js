@@ -19,5 +19,5 @@ export const kkpAPI = createApi({
   }),
   endpoints: () => ({}),
   overrideExisting: true,
-  tagTypes: ["Divisi"],
+  tagTypes: ["Divisi", "User"],
 });
