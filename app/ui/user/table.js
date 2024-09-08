@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import { UpdateUser } from "./buttons";
 
 export default function TableUser({ search }) {
-  const { data } = useGetAllUserQuery();
+  const { data } = useGetAllUserQuery({ search: search });
 
   return (
     <div className="mt-6 flow-root">

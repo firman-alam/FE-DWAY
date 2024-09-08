@@ -3,7 +3,7 @@ import { kkpAPI } from "./api";
 export const UserApi = kkpAPI.injectEndpoints({
   endpoints: (builder) => ({
     getAllUser: builder.query({
-      query: () => `user`,
+      query: ({ search = "" }) => `user?search=${search}`,
       providesTags: ["User"],
     }),
     getUserById: builder.query({
